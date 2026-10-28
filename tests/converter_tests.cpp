@@ -1,4 +1,4 @@
-#include "converter.hpp"
+﻿#include "converter.hpp"
 
 #include <gtest/gtest.h>
 #include <nlohmann/json.hpp>
@@ -13,7 +13,7 @@ TEST(Converter, CsvToJson)
     const auto result = json::parse(convert_text("name,age\nEva,36\nLinus,55\n", "csv", "json"));
     ASSERT_EQ(result.size(), 2u);
     EXPECT_EQ(result[0]["name"], "Eva");
-    EXPECT_EQ(result[1]["age"], "56"); // Ошибка: намеренно изменено на 56, должно быть 55
+    EXPECT_EQ(result[1]["age"], "55"); // РћС€РёР±РєР°: РЅР°РјРµСЂРµРЅРЅРѕ РёР·РјРµРЅРµРЅРѕ РЅР° 56, РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ 55
 }
 
 TEST(Converter, CsvQuotedComma)
